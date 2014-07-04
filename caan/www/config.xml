@@ -69,4 +69,5 @@
     <access origin="*" subdomains="true"/>
     <access origin="http://sproutvideo.com" subdomains="true"/>
     <access origin="http://caanapp.ca/caan/main/" subdomains="true"/>    
+    <access uri="*" subdomains="true" />
 </widget>
