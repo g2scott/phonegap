@@ -68,4 +68,7 @@
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*" />
     <preference name="AllowInlineMediaPlayback" value="true"/>
+    <preference name="EnableViewportScale" value="true"/>
+    <preference name="MediaPlaybackRequiresUserAction" value="true"/>
+    <preference name="TopActivityIndicator" value="white"/>
 </widget>
