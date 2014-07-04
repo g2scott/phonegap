@@ -22,6 +22,12 @@
 <body>
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script type='application/javascript' src='js/fastclick.js'></script>
+    <script>
+    window.addEventListener('load', function() {
+        new FastClick(document.body);
+    }, false);
+    </script>
     <!-- removed bootstrap.js to fix the dropdown menu issue -->
 	 <script src="js/landingpage.js"></script>
     <div id="fb-root"></div>
