@@ -28,10 +28,10 @@ function generateVideoTags(data, url)
 function load (url) {
 	// var result = <?php echo $category_name ?>
 	// triger codeigniter controller to pick return
-	$.ajaxSetup({
-		timeout: 6000
-	});
-	console.log(url);
+//	$.ajaxSetup({
+//		timeout: 6000
+//	});
+//	console.log(url);
 	$.getJSON( url + '/main_page/build_category', function(data){
 		// console.log(data);
 		// console.log(data[1].type);
