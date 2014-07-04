@@ -68,4 +68,5 @@
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*"/>
     <access origin="http://sproutvideo.com" subdomains="true"/>
+    <access origin="http://caanapp.ca/caan/main/" subdomains="true"/>    
 </widget>
