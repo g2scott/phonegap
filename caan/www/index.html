@@ -1,10 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+
+    <title>Canadian Amateur</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="css/responsive_video.css" rel="stylesheet">
+	
 </head>
+
 <body>
-<iframe class='sproutvideo-player' src='http://videos.sproutvideo.com/embed/a49bd9b31d19e4c02c/cc4e5513285d4d6a?type=sd' width='630' height='355' frameborder='0' allowfullscreen></iframe>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- removed bootstrap.js to fix the dropdown menu issue -->
+	 <script src="js/landingpage.js"></script>
+    <div id="fb-root"></div>
+    <script>
+    // (function(d, s, id) {
+    //   var js, fjs = d.getElementsByTagName(s)[0];
+    //   if (d.getElementById(id)) return;
+    //   js = d.createElement(s); js.id = id;
+    //   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+    //   fjs.parentNode.insertBefore(js, fjs);
+    // }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#about">About</a>
+                    </li>
+                    <li><a href="#services">Services</a>
+                    </li>
+                    <li><a href="#contact">Contact</a>
+                    </li>
+                    <li><a href="http://caanapp.ca/caan/main/index.php/account/login_user">Sign in</a>
+                    </li>
+                    <li><a href="http://caanapp.ca/caan/main/index.php/account/register_user">Sign up</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3" id="list_category">
+                <!-- <p class="lead">Video Category</p>
+                    <div id="category" class="list-group">
+                        <a href="#" class="list-group-item">Printable</a>
+                        <a href="#" class="list-group-item">Cupcake Wrappers</a>
+                        <a href="#" class="list-group-item">Authentic Dragon Bones</a>
+                    </div> -->
+            </div>
+
+            <div class="col-md-9">
+
+                <!-- /.row carousel-holder -->
+
+                <div id="list_video" class="row">
+	
+                	<!-- ####### need using JavaScript to built below part ####### -->
+                	<!-- information need for this block is: -->
+                	<!-- 1. video src -->
+                	<!-- 2. description -->
+                	<!-- 3. rating information -->
+
+                        <!-- <div class="col-sm-4 col-lg-4 col-md-4">
+                       			<div class="thumbnail">
+                       				<div class="span6">
+                       								
+                               		<div class="flex-video widescreen"><iframe src='//videos.sproutvideo.com/embed/1c9bd9b01d18e7cf94/ea7ab276cb220754?type=sd' allowfullscreen></iframe></div>
+                       							
+       								<div class="caption">	
+       	                                <h4 class="pull-right">$24.99</h4>
+       	                                <h4><a href="#">First Product</a>
+       	                                </h4>
+       	                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+       	                            </div>
+
+                                   	<div class="ratings">
+       	                                <p class="pull-right">15 reviews</p>
+       	                                <p>
+       	                                    <span class="glyphicon glyphicon-star"></span>
+       	                                    <span class="glyphicon glyphicon-star"></span>
+       	                                    <span class="glyphicon glyphicon-star"></span>
+       	                                    <span class="glyphicon glyphicon-star"></span>
+       	                                    <span class="glyphicon glyphicon-star"></span>
+       	                                </p>
+       	                            </div>
+                           		</div>
+       						</div>
+       					</div>	 -->
+    					
+                	<!-- ####### need using JavaScript to built above part ####### -->		
+                
+                </div> 
+                <!-- /#list_video     -->
+            </div>  
+            <!-- /.col-md-9 -->
+        </div>      
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Canadian Amateur Athletes Network</a>
+                    </p>	
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+
+    <!-- JavaScript -->
+
+	
+	 <script>
+		var url = "http://caanapp.ca/caan/main/index.php";
+		window.onload = load(url);
+	</script>
+
+	
 </body>
+
 </html>
