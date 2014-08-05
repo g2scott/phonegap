@@ -1,36 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" manifest="/cache.appcache">
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- <link rel="shortcut icon" href="../../assets/ico/favicon.ico"> -->
-
-    <title>Login</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/signin.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="1">
+    <meta name="keywords" content="2">
+    <meta name="author" content="3">
+    <link rel="shortcut icon" href="./img/favicon.png"> 
     
 
- 
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <title>CAAN</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    
+    <!-- Add custom CSS here -->
+    <link href="./css/shop-homepage.css" rel="stylesheet">
+    <link href="./css/responsive_video.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+	
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -39,15 +34,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
-                HOME
-             </a>
+                <a class="navbar-brand" href="/">
+                 <img style="max-width:100px; margin-top: -5px;"
+             src="./img/home.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li id="stream"><a href="index.html"><span class="glyphicon glyphicon-film">Stream</a>
+                    <li id="stream"><a href="stream"><span class="glyphicon glyphicon-film">Stream</a>
                     </li>
                     <li>
                         
@@ -56,218 +51,155 @@
          <div class="input-group">
              <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
              <div class="input-group-btn">
-                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-user"></i></button>
+                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
              </div>
          </div>
          </form>
          </div>
-        
                     </li>
-
-					<li><a href="http://caanapp.ca/caan/main/index.php/account/register_user"><i class="glyphicon glyphicon-user"></i>Register</a>
+                    <li id="signin"><a href="login.html"></a>
                     </li>
+                    <li id="signup"><a href="register.html"></a>
+                    </li>  
+                    
+					<a style="color:#428bca;">beta</a>
+                    
                 </ul>
-            </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
+    
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=129704493787021&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
     <div class="container">
 
+        <div class="row">
 
-
-      <form id="login_form" class="form-signin" role="form" action="http://caanapp.ca/caan/main/index.php/account/login" method="post">
-        <h2 class="form-signin-heading">Login</h2>
-        
-
-        <input type="text" class="form-control" placeholder="Email" name="email" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" name="password" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-default btn-block" type="submit">Login</button>
-
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
-
-
-
-      </form>
-
-
-	
-
-    </div> <!-- /container -->
-    <script>
-  
-</script>
-
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
--->
-
-<!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button> -->
-
-<div id="status">
-</div>
-
-	<div class="container">
-
-        <hr>
-
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- <p>Copyright &copy; Company 2013 - Template by <a href="http://maxoffsky.com/">Maks</a> -->
-                    </p>
-                </div>
+            <div class="col-md-3" id="list_category">
+                <!-- <p class="lead">Video Category</p>
+                    <div id="category" class="list-group">
+                        <a href="#" class="list-group-item">Printable</a>
+                        <a href="#" class="list-group-item">Cupcake Wrappers</a>
+                        <a href="#" class="list-group-item">Authentic Dragon Bones</a>
+                    </div> -->
             </div>
-        </footer>
 
+            <div class="col-md-9">
+
+  <!--                <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner hidden-xs">
+                                <div class="item active">
+                                 <a href="http://caanapp.ca/caan/main/index.php/video_controller/build_single_video_page/61"> 
+                                    <img class="slide-image" src="http://placehold.it/800X150" alt="">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                <a href="http://caanapp.ca/caan/main/index.php/video_controller/build_single_video_page/61">
+                                    <img class="slide-image" src="http://placehold.it/800X150" alt="">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                <a href="http://caanapp.ca/caan/main/index.php/video_controller/build_single_video_page/61">
+                                    <img class="slide-image" src="http://placehold.it/800X150" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="left carousel-control hidden-xs" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control hidden-xs" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                        #carousel-example-generic
+                    </div>
+                    .col-md-12
+                </div>  -->
+                <!-- /.row carousel-holder -->
+
+                <div id="list_video" class="row">
+	
+                	<!-- ####### need using JavaScript to built below part ####### -->
+                	<!-- information need for this block is: -->
+                	<!-- 1. video src -->
+                	<!-- 2. description -->
+                	<!-- 3. rating information -->
+
+                        <!-- <div class="col-sm-4 col-lg-4 col-md-4">
+                       			<div class="thumbnail">
+                       				<div class="span6">
+                       								
+                               		<div class="flex-video widescreen"><iframe src='//videos.sproutvideo.com/embed/1c9bd9b01d18e7cf94/ea7ab276cb220754?type=sd' allowfullscreen></iframe></div>
+                       							
+       								<div class="caption">	
+       	                                <h4 class="pull-right">$24.99</h4>
+       	                                <h4><a href="#">First Product</a>
+       	                                </h4>
+       	                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+       	                            </div>
+
+                                   	<div class="ratings">
+       	                                <p class="pull-right">15 reviews</p>
+       	                                <p>
+       	                                    <span class="glyphicon glyphicon-star"></span>
+       	                                    <span class="glyphicon glyphicon-star"></span>
+       	                                    <span class="glyphicon glyphicon-star"></span>
+       	                                    <span class="glyphicon glyphicon-star"></span>
+       	                                    <span class="glyphicon glyphicon-star"></span>
+       	                                </p>
+       	                            </div>
+                           		</div>
+       						</div>
+       					</div>	 -->
+    					
+                	<!-- ####### need using JavaScript to built above part ####### -->		
+                
+                </div> 
+                <!-- /#list_video     -->
+            </div>  
+            <!-- /.col-md-9 -->
+        </div>      
+        <!-- /.row -->
     </div>
+    <!-- /.container -->
 
-    
-
-    <script src="../../assets/js/jquery-1.10.2.js"></script>
-    <script src="../../assets/js/bootstrap.js"></script>
-        <script src="js/facebook.js"></script>
-    
-    <script type="text/javascript">
-
-    // This is called with the results from from FB.getLoginStatus().
-    function statusChangeCallback(response) {
-      console.log('statusChangeCallback');
-      console.log(response);
-      // The response object is returned with a status field that lets the
-      // app know the current login status of the person.
-      // Full docs on the response object can be found in the documentation
-      // for FB.getLoginStatus().
-      if (response.status === 'connected') {
-        // Logged into your app and Facebook.
-        testAPI();
-        //redirect
-      } else if (response.status === 'not_authorized') {
-        // The person is logged into Facebook, but not your app.
-        document.getElementById('status').innerHTML = 'Please log ' +
-          'into this app.';
-      } else {
-        // The person is not logged into Facebook, so we're not sure if
-        // they are logged into this app or not.
-        document.getElementById('status').innerHTML = 'Please log ' +
-          'into Facebook.';
-      }
-    }
-
-    // This function is called when someone finishes with the Login
-    // Button.  See the onlogin handler attached to it in the sample
-    // code below.
-    function checkLoginState() {
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      });
-    }
-
-    window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '129704493787021',
-      cookie     : true,  // enable cookies to allow the server to access 
-                          // the session
-      xfbml      : true,  // parse social plugins on this page
-      version    : 'v2.0' // use version 2.0
-    });
-
-    // Now that we've initialized the JavaScript SDK, we call 
-    // FB.getLoginStatus().  This function gets the state of the
-    // person visiting this page and can return one of three states to
-    // the callback you provide.  They can be:
-    //
-    // 1. Logged into your app ('connected')
-    // 2. Logged into Facebook, but not your app ('not_authorized')
-    // 3. Not logged into Facebook and can't tell if they are logged into
-    //    your app or not.
-    //
-    // These three cases are handled in the callback function.
-
-  //  FB.getLoginStatus(function(response) {
-//      statusChangeCallback(response);
-  //  });
-
-    };
-
-    // Load the SDK asynchronously
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-    // Here we run a very simple test of the Graph API after login is
-    // successful.  See statusChangeCallback() for when this call is made.
-    function testAPI() {
-      console.log('Welcome!  Fetching your information.... ');
-      FB.api('/me', function(response) {
-        console.log('Successful login for: ' + response.name);
-        
-//        document.getElementById('status').innerHTML =
-//          'Thanks for logging in, ' + response.name + '!';
-        
-        var f = document.createElement("form");
-        f.setAttribute('method',"post");
-        f.setAttribute('action',"login_user");
-        f.setAttribute('id',"fb_form");
-
-        var i = document.createElement("input"); //input element, text
-        i.setAttribute('type',"hidden");
-        i.setAttribute('name',"user_name");
-        i.setAttribute('value',response.name);
-        
-        var email = document.createElement("input"); //input element, text
-        email.setAttribute('type',"hidden");
-        email.setAttribute('name',"email");
-        email.setAttribute('value',response.email);
-        
-        var id = document.createElement("input"); //input element, text
-        id.setAttribute('type',"hidden");
-        id.setAttribute('name',"id");
-        id.setAttribute('value',response.id);
-
-        f.appendChild(i);
-        f.appendChild(email);
-        f.appendChild(id);
-
-        //and some more input elements here
-        //and dont forget to add a submit button
-
-        document.getElementsByTagName('body')[0].appendChild(f);
-        
-        var frm = $('#fb_form');
-        
-          $.ajax({
-             	async: false,
-          	dataType: 'json',
-              type: frm.attr('method'),
-              url: "login_user",
-              data: frm.serialize(),
-              success: function (data) {
-                  //alert(data.message);
-                  window.location.href = "../" + data.message;
-              }
-          });
-      });
-    }
-
+    <!-- JavaScript -->
+    <script src="./js/jquery-1.10.2.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <!-- removed bootstrap.js to fix the dropdown menu issue -->
+	 <script src="./js/landingpage.js"></script>
+	
+	 <script>
+		var url = "http://caanapp.ca/caan/main/index.php";
+		window.onload = load(url);
+			     
+	     
 	</script>
 
-
-
-<div id="status">
-</div>
+    <div class="container">
+        <hr>
+        <footer>
+        </footer>
+    </div>
     
-    
-  </body>
+    <!-- /.container -->
+</body>
+
 </html>
+
