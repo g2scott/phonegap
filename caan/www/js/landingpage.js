@@ -1,29 +1,30 @@
 function generateVideoTags(data, url)
 {
 	var outputVideo = '';
+	// outputVideo += "<div class=\"col-sm-4 col-lg-4 col-md-4\"><div class=\"thumbnail\"><div class=\"span6\"><div class=\"flex-video widescreen\"><iframe src=\'";
 	outputVideo += "<div class=\"col-sm-4 col-lg-4 col-md-4\"><div class=\"thumbnail\"><div class=\"span6\"><div class=\"flex-video widescreen\">";
 	var replace = /<iframe class='sproutvideo-player' src='/gi;
 	var link = data.link.replace(replace, "<iframe class='sproutvideo-player' src='http:");
-	replace = /type=sd'/gi;
-	link = data.link.replace(replace, "type=sd&amp;regularColorTop=960000&amp;regularColorBottom=d70000'");
 	outputVideo += link;
+	// outputVideo += "\' allowfullscreen></iframe></div><div class=\"caption\"><h4 class=\"pull-right\"></h4><h4><a href=\"#\">" + data.name + "</a></h4><p>" + data.description +  "</p></div><div class=\"ratings\"><p class=\"pull-right\">15 reviews</p><span class=\"glyphicon glyphicon-star\"></span><span class=\"glyphicon glyphicon-star\"></span><span class=\"glyphicon glyphicon-star\"></span><span class=\"glyphicon glyphicon-star\"></span></p></div></div></div></div>";
 	outputVideo += "</div><div class=\"caption\"><h4 class=\"pull-right\"></h4><h4><a href=\"";
 	outputVideo += url + "/video_controller/build_single_video_page/" + data.v_id;
 	outputVideo +=	"\">" + data.name + "</a></h4><p>" + data.description +  "</p>";
 	outputVideo += "<p><a href=\"";
 
-	outputVideo +=	url + "/public_profile_page/load/" + data.u_id + "\">" + data.user_name + "</a></p>";
+	outputVideo +=	url + "/public_profile_page/load/" + data.u_id + "\">" + data.first + " " + data.last + "</a></p>";
 
 	outputVideo += "</div>"; 
 	// end .caption div
 
-	// add FACEBOOK like button below 
+	// add like button below 
+	//outputVideo += "<div class=\"fb-like\" data-href=\"";
+	//outputVideo += "https://developers.facebook.com/docs/plugins/\"";
 
-	outputVideo += "<iframe src=\"//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcaanapp.ca/caan/main/index.php/video_controller/build_single_video_page/" + data.v_id + "&amp;width=20&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=27&amp;appId=129704493787021\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden; width:100%; height:21px;\" allowTransparency=\"true\"></iframe>";
-	
+	//outputVideo += "data-layout=\"button\" data-action=\"like\" data-show-faces=\"true\" data-share=\"true\"></div>";
+
 	// rating reviews 
-	//outputVideo += "<div class=\"ratings\"><p class=\"pull-right\">15 Views</p><span class=\"glyphicon glyphicon-star\"></span><span class=\"glyphicon glyphicon-star\"></span><span class=\"glyphicon glyphicon-star\"></span><span class=\"glyphicon glyphicon-star\"></span></p></div></div></div></div>";
-	outputVideo += "</div></div></div>";
+	outputVideo += "<div class=\"ratings\"><p class=\"pull-right\">15 reviews</p><span class=\"glyphicon glyphicon-star\"></span><span class=\"glyphicon glyphicon-star\"></span><span class=\"glyphicon glyphicon-star\"></span><span class=\"glyphicon glyphicon-star\"></span></p></div></div></div></div>";
 	// console.log(link);
 	return outputVideo;
 }
@@ -33,20 +34,20 @@ function loadMenubar (url) {
 		// console.log(data);
 		if (data.login != false) {
 			var profile = "<a href=\"";
-			profile += url + '/profile_page';
-			profile += "\"><span class=\"glyphicon glyphicon-user\">Profile</a>";
+			profile += url + '/main_page/profile';
+			profile += "\">Profile</a>";
 			var logout = "<a href=\"";
 			logout += url + '/account/logout_user';
-			logout += "\" onclick=\"logout()\"><span class=\"glyphicon glyphicon-user\">Log-out</a>";
+			logout += "\">Log out</a>";
 			$('#signin').html(profile);
 			$('#signup').html(logout);
 		} else {
 			var signin = "<a href=\"";
-			signin += url + '/account/load_login';
-			signin += "\"><span class=\"glyphicon glyphicon-user\">Login</a>";
+			signin += url + '/account/login_user';
+			signin += "\">Sign in</a>";
 			var signup = "<a href=\"";
 			signup += url + '/account/register_user';
-			signup += "\"><span class=\"glyphicon glyphicon-user\">Register</a>";
+			signup += "\">Sign up</a>";
 			$('#signin').html(signin);
 			$('#signup').html(signup);
 
@@ -90,8 +91,8 @@ function loadCategory (url) {
 		for (var i=0; i < data.length; i++) {
 			outputVideo += generateVideoTags(data[i],url);
 		};
-		var outputType =  "<p class=\"lead\"></p><div id=\"category\" class=\"list-group\">";
-		outputType += "<a href=\"all_type.html\" class=\"list-group-item\">Trending</a>";
+		var outputType =  "<p class=\"lead\">Video Category</p><div id=\"category\" class=\"list-group\">";
+		outputType += "<a href=\"all_type.html\" class=\"list-group-item\">All Categories</a>";
 		outputType += "<a href=\"" + data[0].type + ".html\" class=\"list-group-item\">" + data[0].type + "</a>";
 		for (var i=1; i < data.length; i++) {
 			if(data[i].type != data[i-1].type){
@@ -132,12 +133,6 @@ function loadVideoStream (url) {
 		})
 	})
 }		
-
-function logout(){
-	//alert("logout");
-	tokenStore = window.sessionStorage;
-	tokenStore.removeItem('fbtoken');
-}
 
 
 function load (url) {
