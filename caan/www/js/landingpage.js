@@ -21,7 +21,7 @@ function generateVideoTags(data, url)
 	//outputVideo += "<div class=\"fb-like\" data-href=\"";
 	//outputVideo += "https://developers.facebook.com/docs/plugins/\"";
 
-	//outputVideo += "data-layout=\"button\" data-action=\"like\" data-show-faces=\"true\" data-share=\"true\"></div>";
+	outputVideo += "data-layout=\"button\" data-action=\"like\" data-show-faces=\"true\" data-share=\"true\"></div>";
 
 	// rating reviews 
 	outputVideo += "<div class=\"ratings\"><p class=\"pull-right\">15 reviews</p><span class=\"glyphicon glyphicon-star\"></span><span class=\"glyphicon glyphicon-star\"></span><span class=\"glyphicon glyphicon-star\"></span><span class=\"glyphicon glyphicon-star\"></span></p></div></div></div></div>";
@@ -34,20 +34,20 @@ function loadMenubar (url) {
 		// console.log(data);
 		if (data.login != false) {
 			var profile = "<a href=\"";
-			profile += url + '/main_page/profile';
-			profile += "\">Profile</a>";
+			profile += url + '/profile_page';
+			profile += "\"><span class=\"glyphicon glyphicon-user\">Profile</a>";
 			var logout = "<a href=\"";
 			logout += url + '/account/logout_user';
-			logout += "\">Log out</a>";
+			logout += "\" onclick=\"logout()\"><span class=\"glyphicon glyphicon-user\">Log-out</a>";
 			$('#signin').html(profile);
 			$('#signup').html(logout);
 		} else {
 			var signin = "<a href=\"";
-			signin += url + '/account/login_user';
-			signin += "\">Sign in</a>";
+			signin += url + '/account/load_login';
+			signin += "\"><span class=\"glyphicon glyphicon-user\">Login</a>";
 			var signup = "<a href=\"";
 			signup += url + '/account/register_user';
-			signup += "\">Sign up</a>";
+			signup += "\"><span class=\"glyphicon glyphicon-user\">Register</a>";
 			$('#signin').html(signin);
 			$('#signup').html(signup);
 
@@ -91,8 +91,8 @@ function loadCategory (url) {
 		for (var i=0; i < data.length; i++) {
 			outputVideo += generateVideoTags(data[i],url);
 		};
-		var outputType =  "<p class=\"lead\">Video Category</p><div id=\"category\" class=\"list-group\">";
-		outputType += "<a href=\"all_type.html\" class=\"list-group-item\">All Categories</a>";
+		var outputType =  "<p class=\"lead\"></p><div id=\"category\" class=\"list-group\">";
+		outputType += "<a href=\"all_type.html\" class=\"list-group-item\">Trending</a>";
 		outputType += "<a href=\"" + data[0].type + ".html\" class=\"list-group-item\">" + data[0].type + "</a>";
 		for (var i=1; i < data.length; i++) {
 			if(data[i].type != data[i-1].type){
@@ -133,6 +133,12 @@ function loadVideoStream (url) {
 		})
 	})
 }		
+
+function logout(){
+	//alert("logout");
+	tokenStore = window.sessionStorage;
+	tokenStore.removeItem('fbtoken');
+}
 
 
 function load (url) {
