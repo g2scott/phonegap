@@ -34,7 +34,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="./index.html">
                  <img style="max-width:100px; margin-top: -5px;"
              src="./img/home.png"></a>
             </div>
@@ -57,9 +57,9 @@
          </form>
          </div>
                     </li>
-                    <li id="signin"><a href="login.html"></a>
+                    <li id="signin"><a href="./login.html"></a>
                     </li>
-                    <li id="signup"><a href="register.html"></a>
+                    <li id="signup"><a href="./register.html"></a>
                     </li>  
                     
 					<a style="color:#428bca;">beta</a>
@@ -184,6 +184,12 @@
     <script src="./js/bootstrap.js"></script>
     <!-- removed bootstrap.js to fix the dropdown menu issue -->
 	 <script src="./js/landingpage.js"></script>
+	  <script type='application/javascript' src='js/fastclick.js'></script>
+ 	<script>
+ 	window.addEventListener('load', function() {
+ 		new FastClick(document.body);
+ 	}, false);
+ 	</script>
 	
 	 <script>
 		var url = "http://caanapp.ca/caan/main/index.php";
