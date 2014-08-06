@@ -87,7 +87,7 @@ var openFB = (function () {
      * @returns {*}
      */
     function login(callback, options) {
-
+        alert(event.url);
         var loginWindow,
             startTime,
             scope = '';
