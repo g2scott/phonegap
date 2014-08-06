@@ -163,6 +163,7 @@
     }
 
     function getInfo() {
+        alert("CALL");
         openFB.api({
             path: '/me',
             success: function(response) {
@@ -219,7 +220,7 @@
                              	window.location.href = "main.html";
                              }
                              if (data.status == "error"){
-                                 //alert(data.message);
+                                 alert(data.message);
                             	 document.getElementById("error").innerHTML = data.message;
                              }
                          }
