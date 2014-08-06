@@ -57,9 +57,9 @@
          </form>
          </div>
                     </li>
-                    <li id="signin"><a href="./login.html"></a>
+                    <li id="signin"><a href="login.html"></a>
                     </li>
-                    <li id="signup"><a href="./register.html"></a>
+                    <li id="signup"><a href="register.html"></a>
                     </li>  
                     
 					<a style="color:#428bca;">beta</a>
@@ -70,142 +70,239 @@
         <!-- /.container -->
     </nav>
     
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=129704493787021&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
+    
     <div class="container">
 
-        <div class="row">
 
-            <div class="col-md-3" id="list_category">
-                <!-- <p class="lead">Video Category</p>
-                    <div id="category" class="list-group">
-                        <a href="#" class="list-group-item">Printable</a>
-                        <a href="#" class="list-group-item">Cupcake Wrappers</a>
-                        <a href="#" class="list-group-item">Authentic Dragon Bones</a>
-                    </div> -->
-            </div>
 
-            <div class="col-md-9">
+      <form id="login_form" class="form-signin" role="form" action="http://caanapp.ca/caan/main/index.php/account/login" method="post">
+      
+      <h2 class="form-signin-heading">Login</h2>
+      <h4 id="error" class="form-signin-heading"></h4>
+        
+        
+        <input type="text" class="form-control" placeholder="Email" name="email" required autofocus>
+        <input type="password" class="form-control" placeholder="Password" name="password" required>
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-default btn-block" type="submit">Login</button>
 
-  <!--                <div class="row carousel-holder">
+<button type='button' class="btn btn-lg" onclick="login()"><img style="width: 90%; height: 90%; margin-top: -5px; vertical-align: middle;"
+             src="./img/facebook-connect-button.png"></button>
 
-                    <div class="col-md-12">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner hidden-xs">
-                                <div class="item active">
-                                 <a href="http://caanapp.ca/caan/main/index.php/video_controller/build_single_video_page/61"> 
-                                    <img class="slide-image" src="http://placehold.it/800X150" alt="">
-                                    </a>
-                                </div>
-                                <div class="item">
-                                <a href="http://caanapp.ca/caan/main/index.php/video_controller/build_single_video_page/61">
-                                    <img class="slide-image" src="http://placehold.it/800X150" alt="">
-                                    </a>
-                                </div>
-                                <div class="item">
-                                <a href="http://caanapp.ca/caan/main/index.php/video_controller/build_single_video_page/61">
-                                    <img class="slide-image" src="http://placehold.it/800X150" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <a class="left carousel-control hidden-xs" href="#carousel-example-generic" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                            </a>
-                            <a class="right carousel-control hidden-xs" href="#carousel-example-generic" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                            </a>
-                        </div>
-                        #carousel-example-generic
-                    </div>
-                    .col-md-12
-                </div>  -->
-                <!-- /.row carousel-holder -->
 
-                <div id="list_video" class="row">
 	
-                	<!-- ####### need using JavaScript to built below part ####### -->
-                	<!-- information need for this block is: -->
-                	<!-- 1. video src -->
-                	<!-- 2. description -->
-                	<!-- 3. rating information -->
 
-                        <!-- <div class="col-sm-4 col-lg-4 col-md-4">
-                       			<div class="thumbnail">
-                       				<div class="span6">
-                       								
-                               		<div class="flex-video widescreen"><iframe src='//videos.sproutvideo.com/embed/1c9bd9b01d18e7cf94/ea7ab276cb220754?type=sd' allowfullscreen></iframe></div>
-                       							
-       								<div class="caption">	
-       	                                <h4 class="pull-right">$24.99</h4>
-       	                                <h4><a href="#">First Product</a>
-       	                                </h4>
-       	                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-       	                            </div>
+    </div> <!-- /container -->
+    <script>
+  
+</script>
 
-                                   	<div class="ratings">
-       	                                <p class="pull-right">15 reviews</p>
-       	                                <p>
-       	                                    <span class="glyphicon glyphicon-star"></span>
-       	                                    <span class="glyphicon glyphicon-star"></span>
-       	                                    <span class="glyphicon glyphicon-star"></span>
-       	                                    <span class="glyphicon glyphicon-star"></span>
-       	                                    <span class="glyphicon glyphicon-star"></span>
-       	                                </p>
-       	                            </div>
-                           		</div>
-       						</div>
-       					</div>	 -->
-    					
-                	<!-- ####### need using JavaScript to built above part ####### -->		
-                
-                </div> 
-                <!-- /#list_video     -->
-            </div>  
-            <!-- /.col-md-9 -->
-        </div>      
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
 
-    <!-- JavaScript -->
+<!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button> -->
+
+<div id="status">
+</div>
+
     <script src="./js/jquery-1.10.2.js"></script>
     <script src="./js/bootstrap.js"></script>
-    <!-- removed bootstrap.js to fix the dropdown menu issue -->
-	 <script src="./js/landingpage.js"></script>
-	  <script type='application/javascript' src='js/fastclick.js'></script>
- 	<script>
- 	window.addEventListener('load', function() {
- 		new FastClick(document.body);
- 	}, false);
- 	</script>
-	
-	 <script>
-		var url = "http://caanapp.ca/caan/main/index.php";
-		window.onload = load(url);
-			     
-	     
-	</script>
+    <script src="cordova.js"></script>
+        <script src="./js/openfb.js"></script>
+    
+    <script type="text/javascript">
+    var frm = $('#login_form');
+    frm.submit(function (ev) {
+        $.ajax({
+           	async: false,
+        	dataType: 'json',
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+                if (data.status == 'success'){
+					//alert(data.message);
+            		window.location.href = '<?=site_url();?>' + data.message;
+                }if (data.status == 'error'){
+					//alert("Incorrect username or password!");
+					
+            		//window.location.href = '<?=site_url();?>' + data.message;
+            		document.getElementById("error").innerHTML = data.message;
+                }
+            },
+        });
 
+        ev.preventDefault();
+    });
+	</script>
+	
+<script>
+
+     // Defaults to sessionStorage for storing the Facebook token
+     openFB.init({appId: '129704493787021'});
+
+    //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
+    //  openFB.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});
+
+    function login() {
+        openFB.login(
+                function(response) {
+                    if(response.status === 'connected') {
+						//alert('Facebook login succeeded, got access token: ' + response.authResponse.token);
+                        this.getInfo();
+                    } else {
+                        alert('Facebook login failed: ' + response.error);
+                    }
+                }, {scope: 'email,read_stream,publish_stream'});
+    }
+
+    function getInfo() {
+        openFB.api({
+            path: '/me',
+            success: function(response) {
+                console.log(JSON.stringify(response));
+                //document.getElementById("userName").innerHTML = data.name;
+                //document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
+             // document.getElementById('status').innerHTML =
+             // 'Thanks for logging in, ' + response.name + '!';
+                   
+                   var f = document.createElement("form");
+                   f.setAttribute('method',"post");
+                   f.setAttribute('action',"login_user");
+                   f.setAttribute('id',"fb_form");
+
+                   var name = document.createElement("input"); //input element, text
+                   name.setAttribute('type',"hidden");
+                   name.setAttribute('name',"user_name");
+                   name.setAttribute('value',response.name);
+                   
+                   var email = document.createElement("input"); //input element, text
+                   email.setAttribute('type',"hidden");
+                   email.setAttribute('name',"email");
+                   email.setAttribute('value',response.email);
+                   
+                   var id = document.createElement("input"); //input element, text
+                   id.setAttribute('type',"hidden");
+                   id.setAttribute('name',"id");
+                   id.setAttribute('value',response.id);
+
+                   var pic = document.createElement("input"); //input element, text
+                   pic.setAttribute('type',"hidden");
+                   pic.setAttribute('name',"userPic");
+                   pic.setAttribute('value','http://graph.facebook.com/' + response.id + '/picture?type=normal');
+
+                   f.appendChild(name);
+                   f.appendChild(email);
+                   f.appendChild(id);
+                   f.appendChild(pic);
+
+
+                   document.getElementsByTagName('body')[0].appendChild(f);
+                   
+                   var frm = $('#fb_form');
+                   
+                     $.ajax({
+                         async: false,
+                      dataType: 'json',
+                         type: frm.attr('method'),
+                         url: "login_user",
+                         data: frm.serialize(),
+                         success: function (data) {
+                             if (data.status == "success"){
+                             	//alert(data.message);
+                             	window.location.href = "../" + data.message;
+                             }
+                             if (data.status == "error"){
+                                 //alert(data.message);
+                            	 document.getElementById("error").innerHTML = data.message;
+                             }
+                         }
+                     });
+                     
+            },
+            error: errorHandler});
+    }
+
+    function share() {
+        openFB.api({
+            method: 'POST',
+            path: '/me/feed',
+            params: {
+                message: document.getElementById('Message').value || 'Testing Facebook APIs',
+            },
+            success: function() {
+                alert('the item was posted on Facebook');
+            },
+            error: errorHandler});
+    }
+
+    function revoke() {
+        openFB.revokePermissions(
+                function() {
+                    alert('Permissions revoked');
+                },
+                errorHandler);
+    }
+
+    function logout() {
+        openFB.logout(
+                function() {
+                    alert('Logout successful');
+                },
+                errorHandler);
+    }
+
+    function errorHandler(error) {
+        alert(error.message);
+    }
+    
+	//
+</script>
+
+	<script>
+function loadMenubar (url) {
+	$.getJSON( url + '/main_page/check_login', function(data){
+		// console.log(data);
+		if (data.login != false) {
+			var profile = "<a href=\"";
+			profile += url + '/profile_page';
+			profile += "\"><span class=\"glyphicon glyphicon-user\">Profile</a>";
+			var logout = "<a href=\"";
+			logout += url + '/account/logout_user';
+			logout += "\" onclick=\"logout()\"><span class=\"glyphicon glyphicon-user\">Log-out</a>";
+			$('#signin').html(profile);
+			$('#signup').html(logout);
+		} else {
+			var signin = "<a href=\"";
+			signin += url + '/account/load_login';
+			signin += "\"><span class=\"glyphicon glyphicon-user\">Login</a>";
+			var signup = "<a href=\"";
+			signup += url + '/account/register_user';
+			signup += "\"><span class=\"glyphicon glyphicon-user\">Register</a>";
+			$('#signin').html(signin);
+			$('#signup').html(signup);
+
+		}
+	}) // getJSON end
+}
+loadMenubar('http://caanapp.ca/caan/main/');
+</script>
+	
+
+<div id="status">
+</div>
+    
     <div class="container">
         <hr>
         <footer>
         </footer>
     </div>
     
-    <!-- /.container -->
-</body>
-
+  </body>
 </html>
-
