@@ -151,7 +151,7 @@
     //  openFB.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});
 
     function login() {
-        alert("CALL LOGIN");
+        alert($.mobile.activePage[0].baseURI;);
         openFB.login(
                 function(response) {
                     if(response.status === 'connected') {
